@@ -11,8 +11,13 @@ def elevi(request):
     lista_studenti = Elev.objects.all()
     #studenti_formatat = ", ".join(lista_studenti)
     # studenti_formatat = "<br />".join(lista_studenti)
-    lista_formatata = [(elev.nume, elev.prenume) for elev in lista_studenti]
-    return HttpResponse(lista_formatata)
+    lista_formatata = [elev.nume for elev in lista_studenti]
+    #lista_formatata = "<br />".join(lista_formatata)
+    output_string =""
+    for elev in lista_studenti:
+        rand = f"{elev.nume}, {elev.prenume}<br/>"
+        output_string += rand
+    return HttpResponse(output_string)
 
 
 def contact(request):
