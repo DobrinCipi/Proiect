@@ -17,9 +17,12 @@ def elevi(request):
     for elev in lista_studenti:
         rand = f"{elev.nume}, {elev.prenume}<br/>"
         output_string += rand
+    return render(request, "student.html")
     return HttpResponse(output_string)
 
 
 def contact(request):
     return render(request, "contact.html")
+
+
     
