@@ -3,7 +3,12 @@
         <title> Title </title>
     </head>
     <body>
-            <h1> Contact </h1>
-        
+        <h1> Contact </h1>
+        <ol>
+            {% for elev in elevi %}
+            <li>{{elev.nume}}, Numar telefon: {{elev.telefon}}</li>
+            {% endfor %}
+        </ol>
+
     </body>
 </html>

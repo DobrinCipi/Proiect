@@ -11,8 +11,10 @@
     <body>
         <h1>Lista Elevi</h1>
         <ol>
-            <li> Elev 1</li>
-            <li> Elev 2</li>
+            {% for elev in elevi %}
+            <li> {{elev.nume}} {{elev.prenume}}</li>
+            {% endfor %}
         </ol>
+        {% comment %} {{ elevi }} {% endcomment %}
     </body>
 </html>
