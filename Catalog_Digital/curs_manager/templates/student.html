@@ -12,7 +12,7 @@
         <h1>Lista Elevi</h1>
         <ol>
             {% for elev in elevi %}
-            <li> {{elev.nume}} {{elev.prenume}}</li>
+            <li> {{elev.nume}} {{elev.prenume}}, An: {{elev.an}}</li>
             {% endfor %}
         </ol>
         {% comment %} {{ elevi }} {% endcomment %}
