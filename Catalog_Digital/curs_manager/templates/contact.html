@@ -13,6 +13,7 @@
         <ol>
             {% for elev in elevi %}
             <li>{{elev.nume}}, Numar telefon: {{elev.telefon}} {{elev.an}}</li>
+            {% empty %} <li>Nu sunt Inregistrari</li>
             {% endfor %}
         </ol>
 
