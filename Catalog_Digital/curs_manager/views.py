@@ -25,13 +25,16 @@ def elevi(request):
 
 
 def contact(request):
+    lista_elevi = Elev.objects.all()
     if "an" in request.GET:
         try: 
-            lista_elevi = Elev.objects.filter(an=request.GET["an"])
+            lista_elevi = lista_elevi.filter(an=request.GET["an"])
         except ValueError:
             lista_elevi = []
-    else:   
-        lista_elevi = Elev.objects.all()
+            
+    if "nume" in request.GET:
+        lista_elevi = lista_elevi.filter(nume=request.GET["nume"])
+    
     context = {
         "elevi" : lista_elevi
     }
