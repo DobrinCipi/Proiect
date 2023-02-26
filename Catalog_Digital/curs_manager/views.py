@@ -28,7 +28,7 @@ def contact(request):
     lista_elevi = Elev.objects.all()
     if "an" in request.GET:
         try: 
-            lista_elevi = lista_elevi.filter(an=request.GET["an"])
+            lista_elevi = lista_elevi.filter(an__lte=request.GET["an"])
         except ValueError:
             lista_elevi = []
             
