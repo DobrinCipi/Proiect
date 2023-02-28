@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Elev, AdresNoua
+from .models import Elev, AdresNoua, ElevProfile
 
 class ElevAdmin(admin.ModelAdmin):
     list_display = ("nume", "prenume", "an")
@@ -15,3 +15,4 @@ class AdresaAdmin(admin.ModelAdmin):
 
 admin.site.register(Elev, ElevAdmin)
 admin.site.register(AdresNoua, AdresaAdmin )
+admin.site.register(ElevProfile)

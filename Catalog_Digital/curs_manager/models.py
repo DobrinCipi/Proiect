@@ -40,3 +40,15 @@ class AdresNoua(models.Model):
     
     def __str__(self):
         return f"{self.strada} {self.elev}"
+    
+    
+    
+class ElevProfile(models.Model):
+    class Meta:
+        verbose_name_plural = "Elev Profiles"
+    elev = models.OneToOneField(Elev, on_delete=models.CASCADE)
+    varsta = models.IntegerField()
+    
+    def __str__(self):
+        return f"{self.elev} Varsta: {self.varsta}"
+    
